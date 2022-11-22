@@ -11,7 +11,7 @@
 
 &lt {
 	flavor = "hold-preferred";
-	quick-tap-ms = <125>;
+	quick-tap-ms = <200>;
 	global-quick-tap;
 	retro-tap;
 };
