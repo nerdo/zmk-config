@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &lt {
-	tapping-term-ms = <100>;
+	retro-tap;
 };
 
 / {
