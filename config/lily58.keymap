@@ -20,7 +20,7 @@
 			label = "SHIFT_ON_HOLD_CAPS_ON_TAP";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
-			bindings = <&kp>, <&caps_word>;
+			bindings = <&kp &caps_word>;
 		};
 	};
 
