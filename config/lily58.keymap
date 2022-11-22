@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &lt {
-	flavor = "hold-preferred";
+	flavor = "balanced";
 	retro-tap;
 };
 
