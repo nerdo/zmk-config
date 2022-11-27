@@ -23,7 +23,7 @@
 					label = "TAP_DANCE_GUI_LEFT_LAYER";
 					#binding-cells = <0>;
 					tapping-term-ms = <200>;
-					bindings = <&kp LGUI>, <&mo 1>;
+					bindings = <&kp LGUI>, <&mo 1>, <&kp LSHIFT &mo 1>;
 			};
 
 			td_grl: tap_dance_gui_right_layer {
