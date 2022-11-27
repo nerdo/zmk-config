@@ -17,13 +17,26 @@
 };
 
 / {
+	 macros {
+        macro_sl1: macro_sl1 {
+            label = "MACRO_SHIFT_LAYER_1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1 &kp LSHFT>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 1 &kp LSHFT>
+						;
+			};
+	};
+
 	behaviors {
 			td_gll: tap_dance_gui_left_layer {
 					compatible = "zmk,behavior-tap-dance";
 					label = "TAP_DANCE_GUI_LEFT_LAYER";
 					#binding-cells = <0>;
 					tapping-term-ms = <200>;
-					bindings = <&kp LGUI>, <&mo 1>, <&kp LSHIFT &mo 1>;
+					bindings = <&kp LGUI>, <&mo 1>, <&macro_sl1>;
 			};
 
 			td_grl: tap_dance_gui_right_layer {
