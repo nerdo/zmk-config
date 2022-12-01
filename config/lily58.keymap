@@ -44,8 +44,8 @@
 					compatible = "zmk,behavior-macro";
 					#binding-cells = <0>;
 					bindings
-						= <&macro_press &kp RS(RC(TAB))>
-						, <&macro_release &kp RS(RC(TAB))>
+						= <&macro_press &kp LC(LS(TAB))>
+						, <&macro_release &kp LC(LS(TAB))>
 						;
 			};
 	};
