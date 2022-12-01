@@ -19,6 +19,7 @@
 	macros {
 		// ...because macos doesn't seem to register caps lock keypresses unless they're held longer...
 		m_caps: m_caps {
+					label = "M_CAPS",
 					compatible = "zmk,behavior-macro";
 					#binding-cells = <0>;
 					bindings
