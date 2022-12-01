@@ -45,7 +45,7 @@
 					#binding-cells = <0>;
 					bindings
 						= <&macro_press &kp RS(RC(TAB))>
-						, <&macro_release &kp RC(TAB)>
+						, <&macro_release &kp RS(RC(TAB))>
 						;
 			};
 	};
