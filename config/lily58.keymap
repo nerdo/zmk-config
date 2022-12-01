@@ -25,6 +25,7 @@
 						= <&macro_press &kp CAPS>
 						, <&macro_wait_time 500>
 						, <&macro_release &kp CAPS>
+						;
 			};
 	};
 
