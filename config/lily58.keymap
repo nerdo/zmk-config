@@ -16,6 +16,14 @@
 };
 
 / {
+	conditional_layers {
+			compatible = "zmk,conditional-layers";
+			system_layer {
+					if-layers = <1 2>;
+					then-layer = <3>;
+			};
+	};
+
 	macros {
 			// ...because macos doesn't seem to register caps lock keypresses unless they're held longer...
 			m_caps: m_caps {
@@ -112,11 +120,11 @@
 			// |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
 			//                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
-        &trans      &kp F1            &kp F2             &kp F3             &kp F4        &kp F5        &kp F6      &kp F7        &kp F8        &kp F9      &kp F10    &kp DEL
-        &trans      &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &none
-        &bt BT_CLR  &none             &none              &none              &trans        &trans        &none       &kp LBKT      &kp RBKT      &kp MINUS   &kp EQUAL  &none
-        &trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &none         &none         &none       &none         &none         &none       &none      &none  &none  &trans
-        &trans      &trans            &kp UNDER          &kp UNDER          &kp UNDER     &kp UNDER     &trans      &trans
+        &none   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6      &kp F7        &kp F8        &kp F9      &kp F10    &kp DEL
+        &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &none
+        &trans  &none         &none         &none         &trans        &trans        &none       &kp LBKT      &kp RBKT      &kp MINUS   &kp EQUAL  &none
+        &trans  &none         &none         &none         &none         &none         &none       &none         &none         &none       &none      &none  &none  &trans
+        &trans  &trans        &kp UNDER     &trans        &trans        &kp UNDER     &trans      &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -134,7 +142,25 @@
         &trans  &trans  &trans     &trans     &trans     &trans     &trans    &trans    &trans  &trans     &trans  &trans
         &trans  &none   &none      &none      &trans     &trans     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none   &none
         &trans  &none   &none      &none      &none      &none      &none     &none     &none   &none      &none   &none  &none  &trans
-        &trans  &trans  &kp UNDER  &kp UNDER  &kp UNDER  &kp UNDER  &trans    &trans
+        &trans  &trans  &kp UNDER  &trans     &trans     &kp UNDER  &trans    &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+
+		system_layer {
+			// ------------------------------------------------------------------------------------------------------------
+			// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+			// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
+			// |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
+			// |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
+			//                     |      |      |      |        |  |       |      |       |       |
+			bindings = <
+        &none       &none             &none              &none              &none      &none      &none  &none  &none  &none  &none  &none
+        &none       &none             &none              &none              &none      &none      &none  &none  &none  &none  &none  &none
+        &bt BT_CLR  &none             &none              &none              &none      &none      &none  &none  &none  &none  &none  &none
+        &none       &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &none      &none      &none  &none  &none  &none  &none  &none  &none  &none
+        &none       &none             &none					     &trans             &trans     &none      &none  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
