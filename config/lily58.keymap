@@ -25,18 +25,6 @@
 	};
 
 	macros {
-			// ...because macos doesn't seem to register caps lock keypresses unless they're held longer...
-			m_caps: m_caps {
-					label = "M_CAPS";
-					compatible = "zmk,behavior-macro";
-					#binding-cells = <0>;
-					bindings
-						= <&macro_press &kp CAPS>
-						, <&macro_wait_time 500>
-						, <&macro_release &kp CAPS>
-						;
-			};
-
 			m_next: m_next {
 					label = "M_NEXT";
 					compatible = "zmk,behavior-macro";
@@ -59,14 +47,6 @@
 	};
 
 	behaviors {
-			td_sc: tap_dance_shift_caps {
-					compatible = "zmk,behavior-tap-dance";
-					label = "TAP_DANCE_SHIFT_CAPS";
-					#binding-cells = <0>;
-					tapping-term-ms = <200>;
-					bindings = <&kp LSHFT>, <&m_caps>;
-			};
-
 			gqt: global-quick-tap {
 					compatible = "zmk,behavior-hold-tap";
 					label = "GLOBAL_QUICK_TAP";
