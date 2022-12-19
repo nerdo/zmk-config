@@ -75,7 +75,6 @@
 					tapping-term-ms = <200>;
 					quick-tap-ms = <200>;
 					global-quick-tap;
-					retro-tap;
 					bindings = <&kp>, <&kp>;
 			};
 
@@ -86,7 +85,6 @@
 					flavor = "hold-preferred";
 					tapping-term-ms = <200>;
 					quick-tap-ms = <125>;
-					retro-tap;
 					bindings = <&kp>, <&kp>;
 			};
 	};
