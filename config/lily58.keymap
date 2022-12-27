@@ -63,7 +63,7 @@
 					label = "GLOBAL_QUICK_TAP";
 					#binding-cells = <2>;
 					flavor = "hold-preferred";
-					tapping-term-ms = <200>;
+					tapping-term-ms = <150>;
 					quick-tap-ms = <200>;
 					global-quick-tap;
 					bindings = <&kp>, <&kp>;
@@ -74,7 +74,7 @@
 					label = "MOD_TAP_QUICK";
 					#binding-cells = <2>;
 					flavor = "hold-preferred";
-					tapping-term-ms = <200>;
+					tapping-term-ms = <150>;
 					quick-tap-ms = <125>;
 					bindings = <&kp>, <&kp>;
 			};
@@ -110,9 +110,9 @@
 			//                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
         &none   &kp F1  &kp F2  &kp F3     &kp F4     &kp F5  &kp F6      &kp F7        &kp F8        &kp F9     &kp F10    &kp DEL
-        &trans  &none   &none   &none      &none      &none   &none       &kp C_VOL_DN  &kp C_VOL_UP  &none      &none      &none
+        &trans  &none   &none   &none      &none      &none   &none       &kp C_VOL_DN  &kp C_VOL_UP  &none      &kp C_PP   &none
         &trans  &none   &none   &none      &trans     &trans  &none       &kp LBKT      &kp RBKT      &kp MINUS  &kp EQUAL  &none
-        &trans  &none   &none   &none      &none      &none   &kp C_PREV  &kp C_NEXT    &none         &none      &none      &none  &none  &kp C_PP
+        &trans  &none   &none   &none      &none      &none   &kp C_PREV  &kp C_NEXT    &none         &none      &none      &none  &none  &kp RSHFT
         &trans  &trans  &trans  &kp UNDER  &kp UNDER  &trans  &trans      &trans
 			>;
 
@@ -128,9 +128,9 @@
 			//                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
         &none   &kp F1  &kp F2  &kp F3     &kp F4     &kp F5  &kp F6      &kp F7        &kp F8        &kp F9     &kp F10  &kp DEL
-        &trans  &none   &none   &none      &none      &none   &none       &kp C_VOL_DN  &kp C_VOL_UP  &none      &none    &none
+        &trans  &none   &none   &none      &none      &none   &none       &kp C_VOL_DN  &kp C_VOL_UP  &none      &kp C_PP &none
         &trans  &none   &none   &none      &trans     &trans  &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT  &none    &none
-        &trans  &none   &none   &none      &none      &none   &kp C_PREV  &kp C_NEXT    &none         &none      &none    &none  &none  &kp C_PP
+        &trans  &none   &none   &none      &none      &none   &kp C_PREV  &kp C_NEXT    &none         &none      &none    &none  &none  &kp RSHFT
         &trans  &trans  &trans  &kp UNDER  &kp UNDER  &trans  &trans      &trans
 			>;
 
