@@ -63,7 +63,7 @@
 					label = "GLOBAL_QUICK_TAP";
 					#binding-cells = <2>;
 					flavor = "hold-preferred";
-					tapping-term-ms = <150>;
+					tapping-term-ms = <200>;
 					quick-tap-ms = <200>;
 					global-quick-tap;
 					bindings = <&kp>, <&kp>;
@@ -74,7 +74,7 @@
 					label = "MOD_TAP_QUICK";
 					#binding-cells = <2>;
 					flavor = "hold-preferred";
-					tapping-term-ms = <150>;
+					tapping-term-ms = <200>;
 					quick-tap-ms = <125>;
 					bindings = <&kp>, <&kp>;
 			};
