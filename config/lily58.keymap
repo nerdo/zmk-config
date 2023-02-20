@@ -14,6 +14,7 @@
 #define LYR_UPPER 2
 #define LYR_SYSTEM 3
 #define LYR_GAMING 4
+#define LYR_GAMING_LOWER 5
 
 / {
 	conditional_layers {
@@ -165,14 +166,33 @@
 			// | LSHFT |  Z  |  X  |  C   |  V   |  B   |  ESC   |  |  ESC  |  N   |   M   |   ,   |  .   |   /   |  RET  |
 			//                     |      |      |      |  SPC   |  |  SPC  |      |       |       |
 			bindings = <
-        &kp GRAVE     &kp N1  &kp N2  &kp N3     &kp N4     &kp N5         &kp N6    &kp N7           &kp N8  &kp N9  &kp N0     &kp BSPC
-        &kp LALT      &kp Q   &kp W   &kp E      &kp R      &kp T          &kp Y     &kp U            &kp I   &kp O   &kp P      &kp BSLH
-        &kp LCTRL     &kp A   &kp S   &kp D      &kp F      &kp G          &kp H     &kp J            &kp K   &kp L   &kp SEMI   &kp SQT
-        &kp LSHFT     &kp Z   &kp X   &kp C      &kp V      &kp B          &kp ESC   &to LYR_DEFAULT  &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RET
-        &mo LYR_UPPER &kp F2  &kp F3  &kp SPACE  &kp SPACE  &mo LYR_UPPER  &kp RGUI  &kp RALT
+        &kp GRAVE     &kp N1  &kp N2  &kp N3     &kp N4     &kp N5                &kp N6    &kp N7           &kp N8  &kp N9  &kp N0     &kp BSPC
+        &kp LALT      &kp Q   &kp W   &kp E      &kp R      &kp T                 &kp Y     &kp U            &kp I   &kp O   &kp P      &kp BSLH
+        &kp LCTRL     &kp A   &kp S   &kp D      &kp F      &kp G                 &kp H     &kp J            &kp K   &kp L   &kp SEMI   &kp SQT
+        &kp LSHFT     &kp Z   &kp X   &kp C      &kp V      &kp B                 &kp ESC   &to LYR_DEFAULT  &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RET
+        &kp F1        &kp F2  &kp F3  &kp SPACE  &kp SPACE  &mo LYR_GAMING_LOWER  &kp RGUI  &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
+
+		gaming_lower_layer {
+			// ---------------------------------------------------------------------------------------------------------------------
+			// |       |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7      |  F8      |  F9  |  F10  | DEL   |
+			// |       |      |      |      |      |      |                    |      | C_VOL_DN | C_VOL_UP |      | C_PP  |       |
+			// |       |      |      |      |      |      |                    |      |   [      |  ]       |  -   | =     |       |
+			// |       |      |      |      |      |      | C_PREV |  | C_NEXT |      |          |          |      |       | RSHFT |
+			//                       |      |      |      | _      |  | _      |      |          |          |
+			bindings = <
+        &none   &kp F1  &kp F2  &kp F3     &kp F4     &kp F5  &kp F6      &kp F7        &kp F8        &kp F9     &kp F10    &kp DEL
+        &trans  &none   &none   &none      &none      &none   &none       &kp C_VOL_DN  &kp C_VOL_UP  &none      &kp C_PP   &none
+        &trans  &none   &none   &none      &trans     &trans  &none       &kp LBKT      &kp RBKT      &kp MINUS  &kp EQUAL  &none
+        &trans  &none   &none   &none      &none      &none   &kp C_PREV  &kp C_NEXT    &none         &none      &none      &none  &none  &kp RSHFT
+        &trans  &trans  &trans  &kp UNDER  &kp UNDER  &trans  &trans      &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+
 	};
 };
